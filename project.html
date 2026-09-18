@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>作品詳細內容｜陳穎辰</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=36" />
+  <style>
+    .project-page{width:100%;max-width:none;margin:0;background:#eef8fb;padding:92px max(32px,calc((100% - 1140px)/2)) 120px}
+    .project-page-back{display:inline-block;color:var(--muted);font-weight:600;text-decoration:none;margin-bottom:34px}
+    .project-page-back:hover{color:var(--ink)}
+    .project-page-hero{border-radius:18px;min-height:260px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;color:#d5f3fb;box-shadow:0 14px 30px rgba(18,52,75,.10)}
+    .project-page-hero.project-hero-image{position:relative;overflow:hidden;padding:0;min-height:360px;background:#fff}
+    .project-page-hero.project-hero-whisper{padding:22px 34px;background:#f7fbfc}
+    .project-hero-whisper img{object-fit:contain;object-position:center}
+    .project-page-hero.project-hero-todo{padding:22px 34px;background:#f7fbfc}
+    .project-hero-todo img{object-fit:contain;object-position:center}
+    .project-page-hero.project-hero-csharp{padding:22px 34px;background:#f7fbfc}
+    .project-hero-csharp img{object-fit:contain;object-position:center}
+    .project-page-hero.project-hero-crawler{padding:22px 34px;background:#f7fbfc}
+    .project-hero-crawler img{object-fit:contain;object-position:center}
+    .project-page-hero.project-hero-game{padding:22px 34px;background:#dceefe}
+    .project-hero-game img{object-fit:contain;object-position:center}
+    .project-hero-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+    .project-hero-image .tag{position:absolute;top:24px;left:28px;background:rgba(18,52,75,.88);color:#d5f3fb}
+    .project-page-number{align-self:center;font:700 128px/1 'Space Grotesk',sans-serif;color:rgba(255,255,255,.86)}
+    .project-page-content{background:#fff;border:1px solid var(--line);border-radius:16px;padding:38px;margin-top:22px;box-shadow:0 10px 24px rgba(18,52,75,.05)}
+    .project-page-content h1{font-size:clamp(30px,4vw,46px);line-height:1.3;letter-spacing:-.06em;margin:8px 0 16px;color:var(--ink)}
+    .project-page-lead{color:var(--muted);font-size:17px;line-height:2;margin:0 0 32px}
+    .project-live-link{display:inline-flex;align-items:center;gap:8px;margin:-10px 0 30px;padding:11px 17px;border-radius:9px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;box-shadow:0 8px 18px rgba(18,52,75,.12);transition:.25s}
+    .project-live-link:hover{background:#235775;transform:translateY(-2px)}
+    .project-page-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 34px;align-items:start;border-top:1px solid var(--line);padding-top:30px}
+    .project-page-sections section{border-left:2px solid var(--blue2);padding:0 22px 18px}
+    .project-page-sections section:last-child{grid-column:1 / -1}
+    .project-page-sections h2{font-size:18px;margin:0 0 12px;color:var(--ink)}
+    .project-page-sections p{min-height:0;color:var(--muted);font-size:16px;line-height:2;margin:0}
+    .project-page-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+    .project-page-tags span{padding:5px 11px;border-radius:50px;background:var(--blue);color:#396d85;font-size:12px}
+    .project-gallery{margin-top:42px}
+    .project-gallery-title{font-size:25px;line-height:1.35;letter-spacing:-.04em;margin:0 0 22px;padding:0 0 18px;border-bottom:1px solid rgba(18,52,75,.22)}
+    .project-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+    .project-gallery figure{margin:0;background:#fff;border:1px solid rgba(18,52,75,.12);border-radius:20px;padding:14px;box-shadow:0 14px 28px rgba(18,52,75,.07);transition:transform .2s ease,box-shadow .2s ease}
+    .project-gallery figure:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(18,52,75,.11)}
+    .project-gallery figure.wide{grid-column:span 2}
+    .project-gallery img{display:block;width:100%;height:290px;object-fit:contain;object-position:center;border-radius:12px;background:#f7fbfd;padding:8px}
+    .project-gallery figure.wide img{height:auto;aspect-ratio:16/9;object-fit:contain;background:#f7fbfd}
+    .project-gallery figure.photo img{object-fit:cover}
+    .project-gallery figure.award-photo img{object-fit:contain;background:#f7fbfd}
+    .project-gallery figcaption{color:var(--muted);font-size:15px;line-height:1.8;padding:14px 5px 3px}
+    .project-levels{margin-top:30px}
+    .project-levels-title{font-size:25px;line-height:1.35;letter-spacing:-.04em;margin:0 0 18px;padding:0 0 18px;border-bottom:1px solid rgba(18,52,75,.22)}
+    .project-levels-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .project-level{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:0 10px 24px rgba(18,52,75,.05)}
+    .project-level-index{font:700 13px/1 'Space Grotesk',sans-serif;color:var(--blue2);letter-spacing:.12em;margin-bottom:13px}
+    .project-level h3{font-size:19px;margin:0 0 10px;color:var(--ink)}
+    .project-level p{color:var(--muted);font-size:15px;line-height:1.85;margin:0}
+    .magic-process-step{display:flex;min-height:250px}.magic-process-step .project-level{width:100%;display:flex;flex-direction:column}.magic-process-step .project-level p{flex:1}
+    .project-compare{margin-top:30px}.project-compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.project-compare-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:0 10px 24px rgba(18,52,75,.05)}.project-compare-card.parallel{background:linear-gradient(135deg,#f1f8fc,#fff)}.project-compare-index{font:700 13px/1 'Space Grotesk',sans-serif;color:var(--blue2);letter-spacing:.12em;margin-bottom:13px}.project-compare-card h3{font-size:19px;margin:0 0 10px;color:var(--ink)}.project-compare-card p{color:var(--muted);font-size:15px;line-height:1.85;margin:0}
+    @media(max-width:800px){.project-page{padding:70px 21px 85px}.project-page-hero{min-height:210px}.project-page-hero.project-hero-image{min-height:230px}.project-page-number{font-size:90px}.project-page-content{padding:25px 22px}.project-page-sections{grid-template-columns:1fr;gap:22px}.project-page-sections section:last-child{grid-column:auto}.project-page-lead{font-size:16px}.project-gallery-grid{grid-template-columns:1fr}.project-gallery figure.wide{grid-column:auto}.project-gallery img{height:260px}.project-gallery figure.wide img{height:auto}.project-levels-grid,.project-compare-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html#home" aria-label="回到首頁"><span class="brand-mark">C</span><span>陳穎辰</span></a>
+    <nav aria-label="主要導覽">
+      <a class="tab-link" href="index.html#home">首頁</a><a class="tab-link" href="index.html#about">自傳</a><a class="tab-link" href="index.html#journey">學習歷程</a><a class="tab-link active" aria-current="page" href="index.html#work">作品集</a><a class="tab-link" href="index.html#research">未來規劃</a><a class="tab-link" href="index.html#highlights">獎項與證照</a>
+    </nav>
+  </header>
+  <main class="project-page" id="project-page"><a class="project-page-back" href="index.html#work">← 返回作品集</a></main>
+  <script>
+    const projects = {
+      '01':['CAPSTONE PROJECT','NQU AI Assistant','結合校園知識庫、語音互動與大型語言模型的智慧資訊助理',['Python','RAG','LLM','Unity'],'visual-ai'],
+      '02':['RESEARCH','智慧居家機器人的自然語言處理與任務規劃','以中文語音辨識模型為基礎，支援智慧居家機器人的語言理解與任務規劃',['Speech AI','Fine-tuning','CER'],'visual-speech'],
+      '03':['WEB DESIGN','TO DO LIST網頁','以待辦事項管理為主題的網頁作品，整合任務建立、分類、期限與狀態管理',['HTML','CSS','JavaScript'],'visual-web'],
+      '04':['GAME PROJECT','多啦A夢冒險','以 Unity 製作的 2D 冒險遊戲，累積分數、蒐集道具並閃躲攻擊，直到擊敗 Boss',['Unity','C#','Boss Battle','Item Collection'],'visual-game'],
+      '05':['GAME PROJECT','Soul Reclaimer','以 Unity 製作三個主題關卡的 2D 遊戲，結合角色操作、敵人戰鬥、回血道具與場景切換',['Unity','C#','Combat','Scene Flow'],'visual-game-two'],
+      '06':['DATA ANALYSIS','平均預期壽命數據分析','透過資料整理與視覺化分析觀察平均預期壽命變化',['Python','Data Analysis','Visualization'],'visual-data'],
+      '07':['AI APPLICATION','人工智慧於柳丁品質分析之應用','以資料探勘與分類模型分析柳丁品質，探索人工智慧支援農業品質判斷的可行性',['Weka','Data Mining','Random Forest','Classification'],'visual-orange'],
+      '08':['WEB DESIGN','C# 網頁設計','以 ASP.NET Core 建立多頁式管理網站，整合會員登入、公告與相簿管理、SQLite 操作及互動功能',['ASP.NET Core','Razor Pages','SQLite','CRUD'],'visual-csharp'],
+      '09':['PROGRAMMING','Python 天氣預報爬蟲','串接氣象資料開放平臺 API，依縣市取得一週預報並繪製氣溫變化圖',['Python','CWA API','JSON','Matplotlib'],'visual-scraper'],
+      '10':['SYSTEM PROJECT','Multithread在爬蟲的應用','以 Python 爬取十二星座每日運勢，分別實作循序爬蟲與多線程版本，並將結果寫入 SQLite',['Python','BeautifulSoup','Multithreading','SQLite'],'visual-thread'],
+      '11':['INTERACTIVE PROJECT','Modern Magic Mirror','以 Python 整合臉部辨識、語音辨識與星座運勢查詢，打造具有互動回應的智慧魔鏡',['Python','OpenCV','Speech Recognition','Web Scraping'],'visual-mirror'],
+      '12':['PERSONAL PROJECT','個人網頁','整理個人經歷、學習成果與作品內容的個人網站',['HTML','CSS','JavaScript','UI Design'],'visual-portfolio']
+    };
+    const projectDetails = {
+      '01': {
+        concept: 'NQU AI Assistant 是一個以國立金門大學校園資訊為核心的智慧互動助理。我們觀察到，校內資訊分散在不同文件與網頁中，使用者需要花費時間查找，也不一定能判斷答案是否正確。因此，專題希望結合語音互動、校園知識庫與大型語言模型，讓使用者以自然的方式提問並取得較具依據的回答。',
+        content: '使用者可以透過麥克風提出問題，系統先將語音轉換為文字，再依照問題內容進行處理。後端會判斷問題是否涉及校園知識庫；若有對應內容，便透過 RAG 檢索相關資料，再交由語言模型產生回答；完成後再將文字轉換為語音，回傳至 Unity 介面播放。',
+        technology: '前端互動介面使用 Unity 與 C#，後端以 Python 撰寫，並透過 WebSockets 進行前後端連接與資料傳輸。系統以 RAG 方式結合校園知識資料，並搭配語音轉文字（STT）、大型語言模型（LLM）、文字轉語音（TTS）與 JSON 資料傳輸。',
+        role: '我主要負責前端與後端程式碼撰寫，以及前後端之間的連接與整合，包含語音輸入後的資料傳遞、問題處理流程、RAG 資料檢索、LLM 回答、文字轉語音，以及 WebSockets 與 Unity 之間的即時溝通。我也參與資料研究、資料篩選與功能討論，協助團隊將校園資訊整理成系統可以使用的內容。',
+        learning: '這項專題讓我理解，完成一個 AI 系統不只是選擇模型，也需要處理資料品質、模組溝通、錯誤情況與實際使用流程。當 Python 後端需要與 Unity 互動時，我也學習如何處理不同語言與執行環境之間的整合問題。專題成果獲得畢業專題第二名與人氣獎，讓我更確定自己對智慧系統、資訊整合與技術實際應用的興趣。'
+      },
+      '02': {
+        concept: '本研究以 OpenAI Whisper-small 為基礎，使用中文語音資料進行微調，探討模型在特定語句與資料範圍內的辨識表現。研究重點不只在於訓練模型，也包含資料準備、評估設計與結果解讀。',
+        content: '將語音檔案路徑與文字標註整理為 JSON 資料，透過 Scikit-Learn 以 80／20 切分訓練集與驗證集。音訊經 Librosa 統一重採樣至 16 kHz，再由 WhisperProcessor 轉換為 Log-Mel 特徵與文字 Token；訓練完成後，使用驗證集進行生成、CER 計算與語句類別混淆矩陣分析，並保存微調後的模型與 Processor。',
+        technology: 'Python、PyTorch、Librosa、Hugging Face Datasets、Transformers、WhisperProcessor、WhisperForConditionalGeneration、Seq2SeqTrainer、Scikit-Learn、JiWER 與 Seaborn。訓練設定包含 learning rate 1e-5、batch size 4、gradient accumulation 2、10 epochs、每 20 steps 評估一次，並視硬體條件啟用 FP16。',
+        role: '負責語音資料蒐集與整理、文字標註檢查、音訊前處理、模型微調程式撰寫，以及訓練與驗證流程的執行。完成訓練後，我也整理 CER、loss curve 與混淆矩陣等結果，協助判讀模型在既定語句範圍內的表現。',
+        learning: '我學會將語音資料、模型訓練與評估流程串成可重複執行的研究流程，也理解模型 loss 下降不代表能直接推論所有情境都能正確辨識。本次實驗在 10 類固定語句、50 筆驗證樣本的類別配對分析中，預測結果集中於混淆矩陣對角線；既有評估紀錄的 CER 為 0.01246，但仍需在更多說話者、未見語句與噪音環境下進一步驗證。'
+      },
+      '03': {
+        concept: 'TO DO LIST網頁是一個以日常任務管理為主題的前端作品，將待辦事項的建立、分類、期限與完成狀態集中在同一個介面中，協助使用者快速掌握目前需要處理的工作。',
+        content: '使用者可以輸入任務、設定日期與分類，透過核取方塊標記完成狀態，也能直接編輯或刪除既有任務。畫面提供分類篩選與日期排序，讓使用者可以依照工作、生活、學習或其他需求整理清單；任務資料則透過 localStorage 保存在瀏覽器中。詳細畫面展示了作品成果、分類篩選、日期降序與任務編輯等操作情境。',
+        technology: 'HTML、CSS、JavaScript、Font Awesome 與 Web Storage API（localStorage）。',
+        role: '負責頁面結構、視覺排版、任務資料管理與互動功能實作，包含新增、完成切換、刪除、編輯、分類篩選、日期升降序排列及瀏覽器資料儲存。',
+        learning: '透過這個作品，我熟悉從表單輸入、事件監聽到資料狀態更新的前端開發流程，也理解使用者操作後需要即時反映在畫面與儲存資料中。作品讓我練習將多個小功能整理成清楚、可持續使用的操作流程。'
+      },
+      '04': {
+        concept: '多啦A夢冒險是一款以累積分數與挑戰 Boss 為核心的 Unity 2D 遊戲。玩家需要操控角色在關卡中持續前進，盡可能蒐集回血與強化等有利道具，同時閃躲敵人與 Boss 的攻擊，直到累積足夠分數並完成最後挑戰。',
+        content: '遊戲提供角色移動與基本武器攻擊，敵人會持續出現並向玩家靠近。玩家可以透過擊退敵人累積分數，並依照遊戲進度取得回血道具與武器強化道具；取得強化後可使用鈴鐺攻擊。當分數達到 500 後出現 Boss，玩家必須在維持自身血量的同時持續攻擊，將 Boss 的生命值降至 0。系統也整合開始、退出、重玩、背景音樂、按鈕音效、碰撞音效與勝敗畫面。',
+        technology: 'Unity、C#、MonoBehaviour、Unity Input API、Collider2D 觸發事件、Instantiate／Destroy 物件生成與生命週期管理、SceneManager 場景切換，以及 TextMeshPro 與 Image.fillAmount UI。背景材質位移、角色與敵人移動、分數與血量狀態、Boss 血條和碰撞特效皆由腳本控制。',
+        role: '本作品的遊戲構想、介面設計、地圖與關卡流程規劃，以及角色、敵人與 Boss 互動機制皆由我自行完成。實作內容包含角色移動、基本武器、敵人生成與碰撞、道具效果、血量與分數顯示、Boss 戰鬥流程，以及開始、重玩與勝敗畫面的整合。',
+        learning: '透過這項作品，我學會將遊戲目標拆解為角色控制、敵人行為、道具系統、分數條件與 Boss 狀態，再使用 Unity 與 C# 串成完整流程。從獨立規劃到完成實作的過程中，我也更熟悉碰撞事件、物件生成、UI 狀態同步與關卡節奏之間的關聯，並透過測試調整遊戲難度與操作感。'
+      },
+      '05': {
+        concept: 'Soul Reclaimer 是一款以場景探索與戰鬥挑戰為核心的 2D 遊戲。玩家需要操控角色穿越不同區域，面對各具特色的敵人與 Boss，並適時使用回血道具維持戰鬥能力，完成每個場景的挑戰。',
+        content: '遊戲包含森林、沙漠與雪地三個主題場景，各關卡具有不同的敵人配置與挑戰。玩家透過四方向移動探索場景，擊敗當前區域的敵人後開啟通往下一個場景的路徑；在戰鬥過程中，玩家可以取得回血道具恢復生命值，最後在雪地場景面對兩個 Boss，擊敗所有敵人與 Boss 後完成遊戲。',
+        technology: 'Unity、C#、MonoBehaviour、Unity Input System、Cinemachine、場景邊界切換、角色與敵人行為控制、碰撞判定、物件互動與關卡條件管理。',
+        role: '本作品由兩人共同完成。我主要負責程式碼撰寫，包含場景切換、角色控制、敵人行為、Boss 攻擊機制、碰撞判定，以及整體遊戲進行流程的設計與實作。',
+        learning: '透過這項作品，我學會將不同場景的規則與通關條件轉化為程式邏輯，並處理角色、敵人、回血道具與場景狀態之間的互動。實作過程也讓我更熟悉遊戲流程規劃、敵人行為設計與多場景串接。'
+      },
+      '06': {
+        concept: '本作品以 Kaggle 的 Life Expectancy Averaged Dataset 為基礎，分析不同國家與地區的平均預期壽命，探討教育程度、醫療條件、成人死亡率、HIV 感染、人均 GDP 與經濟狀態等因素可能造成的差異。',
+        content: '使用包含 179 個國家與 20 個屬性的資料集，先整理 Country、Region、Schooling、Adult_mortality、Incidents_HIV、GDP_per_capita 與 Life_expectancy 等欄位，再透過相關係數熱力圖、各區域預期壽命箱型圖、描述性統計、低於資料平均值的國家分布圖、預期壽命前十名排行，以及人均 GDP 與預期壽命散佈圖進行比較。',
+        technology: 'Python、Jupyter Notebook、Pandas、NumPy、Matplotlib、Seaborn、Plotly 與資料視覺化。',
+        role: '負責資料集整理、分析流程設計、統計計算、圖表製作與結果解讀，並將分析結果整理成報告與簡報內容。',
+        learning: '透過這項作品，我學會從資料欄位理解問題、使用統計圖表觀察分布與關聯，也更清楚資料分析需要同時注意資料來源、變數意義與解讀限制。分析結果顯示教育、醫療與經濟條件可能與平均預期壽命存在關聯，但仍需要更多資料與更嚴謹的研究方法才能進一步說明因果關係。'
+      },
+      '07': {
+        concept: '本作品以 Kaggle 的 Orange Quality Analysis Dataset 為基礎，探討如何從柳丁的尺寸、重量、甜度、酸鹼值、柔軟度、成熟度、顏色、品種與瑕疵等特徵，建立品質分類與預測模型。研究希望將資料分析結果轉化為容易理解的品質判斷依據，作為農業品質管理的應用參考。',
+        content: '資料集包含 241 筆資料與 11 項屬性，並以 Quality 作為分類目標。先在 Weka 中將品質欄位由數值型態轉為類別型態，再使用 NaiveBayes、IBk、ZeroR、J48 與 RandomForest 進行 10-fold 交叉驗證。再移除相對不重要的 Variety 欄位，最後比較模型準確率與高品質柳丁的特徵分布。',
+        technology: 'Weka、資料探勘、分類模型、RandomForest、10-fold 交叉驗證、NumericToNominal、MergeManyValues、RemoveWithValues，以及資料清理與結果視覺化。',
+        role: '負責資料集整理、欄位意義確認、Weka 前處理、分類器測試、模型結果比較、混淆矩陣判讀，以及研究報告與簡報內容整理。',
+        learning: '原始品質分級較細時，RandomForest 準確率為 55.6017%；重新分為 Low、Mid、High 後提升至 78.0083%，再移除 Variety 欄位後達到 80.9129%。透過這次實作，我理解資料前處理與分類標籤設計會直接影響模型表現，也學會從準確率與特徵分布回頭檢視分析結果。研究結果可作為後續加入環境因素、比較不同品種與擴充資料量的基礎，但目前仍屬資料集上的分類實驗，不能直接等同於實際農場環境的品質判定。'
+      },
+      '08': {
+        concept: '本作品是一個以 ASP.NET Core Razor Pages 製作的多頁式管理網站，將會員、公告、相簿與互動功能整合在同一個系統中。透過資料庫與網頁操作的串接，練習把不同的資訊管理需求轉換成可操作、可維護的網站功能。',
+        content: '首頁提供會員、相簿、公告與其他功能入口。登入流程會從 SQLite 讀取會員資料，驗證帳號與密碼後，以 Session 保存使用者識別資訊，未登入時限制進入會員管理頁面。User、UserAdd 與 UserUpdate 頁面完成會員資料查詢、新增、修改、刪除與登出；Announcement 頁面負責公告內容維護；Album、Album2 與 Album3 則負責圖片瀏覽、上傳、標題與說明建立、資料更新、刪除、Base64 顯示與下載，並以 JavaScript 製作圖片切換與縮圖操作。網站另包含以 JavaScript 製作並使用 LocalStorage 儲存最高分的 Snake 小遊戲。',
+        technology: 'C#、ASP.NET Core Razor Pages、Razor 語法、HTML、CSS、JavaScript、SQLite、Microsoft.Data.Sqlite、ADO.NET、Session、參數化 SQL、交易處理、IFormFile 檔案上傳、Base64、LocalStorage。',
+        role: '負責網站頁面與 C# PageModel 的撰寫，包含會員登入驗證、Session 狀態管理、會員資料 CRUD、公告與相簿管理、SQLite 資料庫操作、圖片上傳與 Base64 轉換、圖片下載，以及頁面流程串接；同時完成 Snake 小遊戲的 JavaScript 互動邏輯。',
+        learning: '透過這個作品，我理解前端頁面、後端 PageModel、登入狀態與資料庫之間的完整資料流，也熟悉以參數化 SQL 執行資料操作與交易處理。從會員驗證、Session、CRUD、圖片檔案處理到下載功能，我更清楚網站除了呈現畫面，也需要同時考量資料安全、狀態管理、檔案格式與使用者操作流程。Snake 的實作則讓我進一步練習瀏覽器端狀態保存與互動功能設計。'
+      },
+      '09': {
+        concept: '本作品以 Python 串接氣象資料開放平臺，讓使用者輸入臺灣縣市後取得一週天氣預報，再將資料轉換成容易閱讀的氣溫變化圖。透過這個小型爬蟲應用，練習從外部 API 取得資料、解析 JSON 結構，並將資料轉化為視覺化結果。',
+        content: '程式先向氣象資料開放平臺 API 發送請求，取得包含臺灣各縣市預報內容的 JSON 資料，再整理出縣市名稱供使用者選擇。輸入後會檢查縣市名稱是否有效，若輸入錯誤則要求重新輸入；確認後擷取該縣市未來七天的日期、最高溫與最低溫，整理日期格式並繪製兩條溫度變化曲線。',
+        technology: 'Python、Requests、氣象資料開放平臺 API、JSON、串列資料處理、Matplotlib。',
+        role: '負責 API 資料取得、JSON 內容解析、縣市輸入與錯誤檢查、日期與溫度資料整理，以及最高溫／最低溫圖表的繪製與呈現。',
+        learning: '透過實作，我熟悉如何閱讀巢狀 JSON 結構並擷取需要的資料，也理解外部 API 串接時需要處理使用者輸入、資料格式與資料更新等問題。將原始天氣資料整理成圖表後，我進一步練習以視覺化方式呈現資料變化，讓程式輸出更容易被理解與使用。'
+      },
+      '10': {
+        concept: '以 Python 製作星座運勢爬蟲，分別建立一般循序執行與多線程平行執行版本，將擷取的每日運勢整理後寫入 SQLite，並比較兩種方式的執行效率。',
+        content: '程式先建立 horoscope 資料表並清除舊資料，再使用 Requests 取得各星座頁面，透過 BeautifulSoup 解析星座名稱、星級與運勢描述。一般版本透過 for 迴圈逐一完成十二個頁面的請求；多線程版本則為每個星座建立 Thread，同時執行爬取工作，並使用 Lock 保護 SQLite 寫入。',
+        technology: 'Python、Requests、BeautifulSoup、threading、SQLite、Lock、資料庫操作。',
+        role: '負責爬蟲程式撰寫、網站資料解析、SQLite 資料表與資料寫入，以及一般版本與多線程版本的實作與執行時間比較。',
+        learning: '透過比較兩種版本，我理解循序處理容易掌握執行順序，但在多個彼此獨立的網路請求中會花費較多等待時間；多線程可以讓多個請求同時進行，縮短整體執行時間，但輸出順序不再固定，也需要使用 Lock 避免多個 Thread 同時寫入資料庫造成衝突。'
+      },
+      '11': {
+        concept: 'Modern Magic Mirror 是一個結合臉部辨識、語音互動與網路資料擷取的 Python 智慧魔鏡。使用者先透過臉部辨識完成註冊與登入，登入後以語音說出星座，系統再取得當日運勢並以語音與視窗呈現結果。',
+        content: '建立會員註冊與登入流程，註冊時擷取臉部影像並使用 LBPH 模型進行訓練；登入時透過攝影機辨識使用者身分。完成驗證後，系統使用語音辨識取得星座名稱，爬取星座運勢資料，整理短評、運勢內容、幸運數字、幸運顏色、開運方位、今日吉時與幸運星座，最後以語音播報及 Tkinter 視窗顯示結果。',
+        technology: 'Python、Tkinter、OpenCV、LBPH Face Recognizer、SpeechRecognition、Google Speech Recognition、Requests、BeautifulSoup、gTTS、Pygame Mixer。',
+        role: '負責臉部註冊與登入流程、語音辨識、星座運勢資料擷取、資料整理、語音播報與視窗呈現等功能整合。',
+        learning: '透過整合影像、語音、網路資料與圖形介面，我理解不同模組之間的資料傳遞與流程控制，也學習處理辨識失敗、使用者輸入不符與外部網站資料擷取等情況，將多項功能串接成完整的互動應用。'
+      },
+      '12': {
+        concept: '這是一個用來整理個人經歷、學習歷程、作品成果、獎項證照與未來規劃的個人網站。',
+        content: '規劃網站導覽與內容架構，製作各分頁、作品卡片、作品詳細頁、證書展示與響應式版面，讓審查者能依序閱讀個人經歷。',
+        technology: 'HTML、CSS、JavaScript、響應式網頁設計。',
+        role: '負責網站資訊架構、文字內容整理、視覺版面設計、作品資料編排與網站製作。',
+        learning: '透過製作網站重新檢視大學期間的學習成果，也練習從閱讀者角度安排資訊層次與瀏覽流程。'
+      }
+    };
+    const queryProject = new URLSearchParams(location.search).get('project');
+    const hashProject = location.hash.match(/^#project-(\d+)$/)?.[1];
+    const id = queryProject || hashProject || '01';
+    const item = projects[id] || projects['01'];
+    const [category,title,lead,tags,visual] = item;
+    document.title = title + '｜作品詳細內容｜陳穎辰';
+    const detail = projectDetails[id];
+    const liveLink = id === '03' ? '<a class="project-live-link" href="https://yc0123.github.io/todolist/" target="_blank" rel="noopener">開啟作品網站 ↗</a>' : '';
+    let hero = id === '01' || id === '02' || id === '03' || id === '04' || id === '05' || id === '06' || id === '07' || id === '08' || id === '09' || id === '12'
+      ? `<div class="project-page-hero project-hero-image ${id === '02' ? 'project-hero-whisper' : id === '03' ? 'project-hero-todo' : id === '04' || id === '05' ? 'project-hero-game' : id === '08' ? 'project-hero-csharp' : id === '09' ? 'project-hero-crawler' : ''}"><img src="${id === '01' ? 'project-assets/nqu-ai/page-01.png' : id === '02' ? 'project-assets/whisper-loss-curve.png' : id === '03' ? 'project-assets/todo-list-result.png' : id === '04' ? 'project-assets/doraemon-adventure-cover.png' : id === '05' ? 'project-assets/soul-reclaimer-05-cover.png' : id === '06' ? 'project-assets/life-expectancy/top10.png' : id === '07' ? 'project-assets/orange-quality/cover.png' : id === '08' ? 'project-assets/csharp-webapp-home.png' : id === '09' ? 'project-assets/crawler-weather-chart.png' : 'site-homepage.png'}" alt="${id === '01' ? 'NQU AI Assistant 專題代表圖片' : id === '02' ? '智慧居家機器人語音模型訓練成果' : id === '03' ? 'TO DO LIST網頁作品成果' : id === '04' ? '多啦A夢冒險遊戲代表圖片' : id === '05' ? 'Soul Reclaimer 遊戲作品成果' : id === '06' ? '平均預期壽命排名前十的國家' : id === '07' ? '人工智慧於柳丁品質分析之應用研究封面' : id === '08' ? 'C# 網頁設計首頁截圖' : id === '09' ? 'Python 天氣資料爬蟲成果圖' : '個人網頁首頁截圖'}" /></div>`
+      : `<div class="project-page-hero ${visual}"><span class="tag">${id || '01'} / ${category}</span><div class="project-page-number">${id || '01'}</div></div>`;
+    if (id === '11') hero = `<div class="project-page-hero project-hero-image project-hero-magic"><img src="project-assets/magic-mirror-cover.png" alt="Modern Magic Mirror 星座運勢查詢成果畫面" /></div>`;
+    const sections = detail ? [
+      ['作品概念', detail.concept],
+      ['製作內容', detail.content],
+      ['使用技術', detail.technology],
+      ['個人負責部分', detail.role],
+      ['學習成果', detail.learning]
+    ] : [
+      ['作品概念','內容待補充'],
+      ['製作內容','內容待補充'],
+      ['使用技術','內容待補充'],
+      ['個人負責部分','內容待補充'],
+      ['學習成果','內容待補充']
+    ];
+    const gallery = id === '01' ? `<section class="project-gallery"><h2 class="project-gallery-title">作品畫面與系統流程</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/nqu-ai/system-architecture.png" alt="NQU AI Assistant 系統架構圖" /><figcaption>系統架構圖：整理 Python、WebSockets、Unity、RAG、Whisper 與語音服務之間的整合關係。</figcaption></figure><figure class="wide"><img src="project-assets/nqu-ai/system-flow.png" alt="NQU AI Assistant 系統流程圖" /><figcaption>系統流程圖：從語音接收、語音轉文字、RAG 知識庫檢索，到 LLM 回答與語音播放的處理流程。</figcaption></figure><figure class="wide photo award-photo"><img src="project-assets/nqu-ai/award-team.jpg" alt="NQU AI Assistant 專題成果展示得獎合照" /><figcaption>專題成果展示後與組員合影，紀錄作品獲得畢業專題第二名與人氣獎的成果。</figcaption></figure><figure class="photo"><img src="project-assets/nqu-ai/result-01.png" alt="NQU AI Assistant NANA 主畫面" /><figcaption>NANA 虛擬人物主畫面，呈現校園資訊助理的互動場景。</figcaption></figure><figure class="photo"><img src="project-assets/nqu-ai/result-02.png" alt="NQU AI Assistant 問題與回答畫面" /><figcaption>使用者提出問題後，系統顯示語音辨識內容與回應結果。</figcaption></figure><figure class="photo"><img src="project-assets/nqu-ai/result-03.png" alt="NQU AI Assistant 回應處理畫面" /><figcaption>系統處理問題並更新角色回應的實際畫面。</figcaption></figure></div></section>` : id === '02' ? `<section class="project-gallery"><h2 class="project-gallery-title">訓練成果與模型評估</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/whisper-loss-curve.png" alt="Whisper 模型訓練與驗證損失曲線" /><figcaption>訓練與驗證損失曲線：兩條曲線隨訓練步數下降並趨於穩定，用來觀察模型的收斂與訓練穩定性。</figcaption></figure><figure class="wide"><img src="project-assets/whisper-confusion-matrix.png" alt="Whisper 中文語音辨識混淆矩陣" /><figcaption>混淆矩陣：在本次固定語句驗證範圍內，預測結果集中於對角線，作為語句類別配對與錯誤分布的分析依據。</figcaption></figure></div></section>` : id === '03' ? `<section class="project-gallery"><h2 class="project-gallery-title">功能畫面與作品成果</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/todo-list-result.png" alt="TO DO LIST網頁作品成果畫面" /><figcaption>作品成果：呈現 TO DO LIST 網頁的完整操作介面，包含任務輸入、日期、分類、篩選、排序與任務列表。</figcaption></figure><figure><img src="project-assets/todo-list-filter.png" alt="TO DO LIST 分類篩選功能畫面" /><figcaption>分類篩選：選擇「生活」後，列表只顯示符合分類的待辦事項，方便集中處理同類任務。</figcaption></figure><figure><img src="project-assets/todo-list-sort-desc.png" alt="TO DO LIST 日期降序功能畫面" /><figcaption>日期降序：按照日期由晚到早排列，較晚期限的任務會出現在上方，方便檢視不同時間範圍的安排。</figcaption></figure><figure class="wide"><img src="project-assets/todo-list-edit.png" alt="TO DO LIST 任務編輯功能畫面" /><figcaption>任務編輯：點選編輯後，可以修改任務文字、分類與日期，再透過確認按鈕保存更新。</figcaption></figure></div></section>` : id === '04' ? `<section class="project-gallery"><h2 class="project-gallery-title">遊戲畫面與功能展示</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/soul-reclaimer-main.png" alt="Soul Reclaimer 遊戲主畫面" /><figcaption>遊戲主畫面：呈現玩家角色、基本武器、分數與關卡操作介面。</figcaption></figure><figure><img src="project-assets/soul-reclaimer-gameplay.png" alt="Soul Reclaimer 遊戲進行畫面" /><figcaption>遊戲進行畫面：玩家操控角色移動並使用基本武器擊退敵人。</figcaption></figure><figure><img src="project-assets/soul-reclaimer-boss.png" alt="Soul Reclaimer Boss 戰鬥畫面" /><figcaption>Boss 戰鬥：分數達到條件後進入 Boss 階段，Boss 具備生命值與攻擊行為。</figcaption></figure><figure class="wide"><img src="project-assets/soul-reclaimer-features.png" alt="Soul Reclaimer 特殊功能與 Boss 血條" /><figcaption>特殊功能：Boss 血條會隨生命值變化，讓玩家能掌握戰鬥進度。</figcaption></figure></div></section>` : '';
+    const displayGallery = id === '06' ? `<section class="project-gallery"><h2 class="project-gallery-title">分析結果與資料視覺化</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/life-expectancy/correlation.png" alt="平均預期壽命分析相關係數熱力圖" /><figcaption>相關係數熱力圖：比較資料集中各項數值屬性之間的相關程度，協助觀察教育、經濟、醫療與預期壽命等變數的關聯。</figcaption></figure><figure><img src="project-assets/life-expectancy/region.png" alt="各區域平均預期壽命分布圖" /><figcaption>區域分布：以箱型圖比較不同地區的平均預期壽命範圍、中位數與差異。</figcaption></figure><figure><img src="project-assets/life-expectancy/map.png" alt="預期壽命低於資料平均值的國家分布圖" /><figcaption>國家分布：標示平均預期壽命低於資料平均值的國家，呈現不同地區的分布情形。</figcaption></figure><figure><img src="project-assets/life-expectancy/top10.png" alt="平均預期壽命排名前十的國家" /><figcaption>前十名排行：整理平均預期壽命較高的國家，作為跨國比較的視覺化結果。</figcaption></figure><figure><img src="project-assets/life-expectancy/gdp.png" alt="各地區人均 GDP 與平均預期壽命散佈圖" /><figcaption>GDP 與預期壽命：觀察人均 GDP 與平均預期壽命的分布關係，初步呈現經濟條件與健康結果之間的關聯。</figcaption></figure></div></section>` : id === '04' ? `<section class="project-gallery"><h2 class="project-gallery-title">遊戲畫面與功能展示</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/doraemon-menu.png" alt="多啦A夢冒險遊戲開始畫面" /><figcaption>開始畫面：以多啦A夢冒險為主題，提供開始遊戲與退出遊戲的選項，建立完整的遊戲入口。</figcaption></figure><figure><img src="project-assets/doraemon-gameplay.png" alt="多啦A夢冒險遊戲進行畫面與道具" /><figcaption>遊戲進行畫面：玩家操控角色移動並閃躲敵人，同時蒐集回血道具、能量道具與攻擊物件，持續累積分數。</figcaption></figure><figure><img src="project-assets/doraemon-powerup.png" alt="多啦A夢冒險強化攻擊畫面" /><figcaption>強化攻擊：取得能量道具後啟動強化效果，讓角色可以使用鈴鐺等特殊攻擊，提高面對敵人的應對能力。</figcaption></figure><figure class="wide"><img src="project-assets/doraemon-boss.png" alt="多啦A夢冒險 Boss 戰鬥畫面" /><figcaption>Boss 戰鬥：分數達到 500 後進入 Boss 關卡，畫面顯示 Boss 血條與玩家生命值，玩家需要閃躲攻擊並持續輸出，直到擊敗 Boss。</figcaption></figure></div></section>` : gallery;
+    const correctedLifeGallery = id === '06' ? `<section class="project-gallery"><h2 class="project-gallery-title">分析結果與資料視覺化</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/life-expectancy/correlation.png" alt="平均預期壽命分析相關係數熱力圖" /><figcaption>相關係數熱力圖：比較資料集中各項數值屬性之間的相關程度，協助觀察教育、經濟、醫療與預期壽命等變數的關聯。</figcaption></figure><figure><img src="project-assets/life-expectancy/region.png" alt="各區域平均預期壽命分布圖" /><figcaption>區域分布：以箱型圖比較不同地區的平均預期壽命範圍、中位數與差異，觀察各區域的整體分布。</figcaption></figure><figure><img src="project-assets/life-expectancy/map.png" alt="預期壽命低於資料平均值的國家分布圖" /><figcaption>國家分布：標示平均預期壽命低於資料平均值的國家，呈現不同地區的分布情形。</figcaption></figure><figure><img src="project-assets/life-expectancy/top10.png" alt="平均預期壽命排名前十的國家" /><figcaption>前十名排行：整理平均預期壽命較高的國家，呈現各國之間的壽命差異。</figcaption></figure><figure><img src="project-assets/life-expectancy/gdp.png" alt="各地區人均 GDP 與平均預期壽命散佈圖" /><figcaption>GDP 與預期壽命：觀察各地區人均 GDP 與平均預期壽命的分布關係，初步呈現經濟條件與健康結果之間的關聯。</figcaption></figure></div></section>` : displayGallery;
+    const orangeGallery = id === '07' ? `<section class="project-gallery"><h2 class="project-gallery-title">研究流程與分析成果</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/orange-quality/attributes.png" alt="柳丁品質分析資料屬性" /><figcaption>資料屬性：整理尺寸、重量、甜度、酸鹼值、柔軟度、成熟度、顏色、品種、瑕疵與品質等欄位，作為後續分類分析的基礎。</figcaption></figure><figure><img src="project-assets/orange-quality/preprocess.png" alt="柳丁品質分析資料前處理" /><figcaption>資料前處理：將品質欄位轉為可分類的類別型態，作為後續分類分析的基礎。</figcaption></figure><figure><img src="project-assets/orange-quality/model-result.png" alt="RandomForest 分類模型結果" /><figcaption>模型比較：測試多種分類器後，選擇表現較佳的 RandomForest 進行後續分析。</figcaption></figure><figure><img src="project-assets/orange-quality/comparison.png" alt="柳丁品質分類準確率比較" /><figcaption>準確率變化：重新劃分品質等級並移除 Variety 欄位後，模型準確率由 55.6017% 提升至 80.9129%。</figcaption></figure><figure><img src="project-assets/orange-quality/high-quality.png" alt="高品質柳丁各項屬性分布" /><figcaption>高品質柳丁分布：篩選品質為 High 的資料，觀察各項屬性的分布情形，作為後續品質特徵討論的參考。</figcaption></figure></div></section>` : '';
+    const finalGallery = id === '05' ? `<section class="project-gallery"><h2 class="project-gallery-title">遊戲畫面與關卡展示</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/soul-reclaimer-05-battle.png" alt="Soul Reclaimer 遊戲戰鬥畫面" /><figcaption>遊戲戰鬥畫面：呈現玩家角色、生命值與敵人配置，玩家需要在場景中移動並與敵人進行戰鬥。</figcaption></figure><figure class="wide"><img src="project-assets/soul-reclaimer-05-cover.png" alt="Soul Reclaimer 遊戲首頁與作品成果" /><figcaption>作品成果：遊戲首頁呈現 Soul Reclaimer 標題與 Play 入口，作為玩家開始遊戲的主要畫面。</figcaption></figure><figure><img src="project-assets/soul-reclaimer-05-forest.png" alt="Soul Reclaimer 森林場景" /><figcaption>森林場景：玩家在森林地圖中探索，面對 Slime 敵人與場景中的障礙配置。</figcaption></figure><figure><img src="project-assets/soul-reclaimer-05-desert.png" alt="Soul Reclaimer 沙漠場景" /><figcaption>沙漠場景：切換至沙漠地圖後，玩家面對 Skeleton 敵人與不同的場景配置。</figcaption></figure></div></section>` : id === '07' ? orangeGallery : correctedLifeGallery;
+    const orderedGallery = id === '05' ? `<section class="project-gallery"><h2 class="project-gallery-title">遊戲畫面與關卡展示</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/soul-reclaimer-05-cover.png" alt="Soul Reclaimer 遊戲首頁與作品成果" /><figcaption>作品成果：遊戲首頁呈現 Soul Reclaimer 標題與 Play 入口，作為玩家開始遊戲的主要畫面。</figcaption></figure><figure><img src="project-assets/soul-reclaimer-05-forest.png" alt="Soul Reclaimer 森林場景" /><figcaption>森林場景：玩家在森林地圖中探索，面對 Slime 敵人與場景中的障礙配置。</figcaption></figure><figure><img src="project-assets/soul-reclaimer-05-desert.png" alt="Soul Reclaimer 沙漠場景" /><figcaption>沙漠場景：切換至沙漠地圖後，玩家面對 Skeleton 敵人與不同的場景配置。</figcaption></figure><figure class="wide"><img src="project-assets/soul-reclaimer-05-battle.png" alt="Soul Reclaimer 雪地場景" /><figcaption>雪地場景：作為遊戲後期的挑戰區域，玩家需要面對更具威脅的敵人與 Boss，完成最後的關卡挑戰。</figcaption></figure></div></section>` : finalGallery;
+    const csharpGallery = id === '08' ? `<section class="project-gallery"><h2 class="project-gallery-title">網站功能畫面</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/csharp-web/user-management.png" alt="C# 網頁設計會員管理畫面" /><figcaption>會員管理：登入後顯示會員資料列表，提供新增、修改與刪除功能，呈現後端資料管理與頁面操作的整合。</figcaption></figure><figure class="wide"><img src="project-assets/csharp-web/album-management.png" alt="C# 網頁設計相簿管理畫面" /><figcaption>相簿管理：以卡片方式呈現圖片、標題與說明，並提供圖片新增、修改與刪除功能，方便集中管理相簿內容。</figcaption></figure><figure class="wide"><img src="project-assets/csharp-web/announcement-management.png" alt="C# 網頁設計公告管理畫面" /><figcaption>公告管理：將公告標題、內容與日期整理成獨立卡片，使用者可以瀏覽並維護網站中的公告資訊。</figcaption></figure><figure class="wide"><img src="project-assets/csharp-web/snake-game.png" alt="C# 網頁設計 Snake 小遊戲畫面" /><figcaption>Snake 小遊戲：以 JavaScript 建立鍵盤操作、食物生成、分數計算與最高分保存，展示網站中的互動功能。</figcaption></figure></div></section>` : orderedGallery;
+    const magicMirrorGallery = id === '11' ? `<section class="project-gallery"><h2 class="project-gallery-title">作品成果與功能流程</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/magic-mirror-cover.png" alt="Modern Magic Mirror 作品報告封面" /><figcaption>作品成果：以 Modern Magic Mirror 為主題，將臉部辨識、語音互動與星座運勢查詢整合為一個具備回應能力的 Python 應用。</figcaption></figure><figure class="magic-process-step"><div class="project-level"><div class="project-level-index">01 / REGISTER</div><h3>臉部註冊</h3><p>輸入英文姓名後，系統透過攝影機擷取臉部影像，建立個人資料夾並訓練 LBPH 臉部辨識模型。</p></div></figure><figure class="magic-process-step"><div class="project-level"><div class="project-level-index">02 / LOGIN</div><h3>臉部登入</h3><p>使用者面對攝影機完成身分辨識，通過驗證後進入星座運勢查詢流程。系統會先倒數擷取畫面，再將臉部特徵與已訓練的模型進行比對；辨識成功後才會進入後續語音查詢功能。</p></div></figure><figure class="magic-process-step"><div class="project-level"><div class="project-level-index">03 / VOICE</div><h3>語音查詢</h3><p>系統以語音辨識取得使用者說出的星座名稱，並檢查輸入是否符合十二星座清單。</p></div></figure><figure class="magic-process-step"><div class="project-level"><div class="project-level-index">04 / RESPONSE</div><h3>運勢回應</h3><p>擷取每日運勢資料後，以 gTTS 語音播報，並透過 Tkinter 視窗顯示完整結果。</p></div></figure></div></section>` : id === '09' ? `<section class="project-gallery"><h2 class="project-gallery-title">程式成果與資料呈現</h2><div class="project-gallery-grid"><figure class="wide"><img src="project-assets/crawler-weather-chart.png" alt="金門縣一週氣溫變化圖" /><figcaption>金門縣氣溫變化：程式依照使用者選擇的縣市，整理未來七天的最高溫與最低溫，並以兩條曲線呈現每日變化。</figcaption></figure><figure class="wide"><img src="project-assets/crawler-weather-chart-hualien.png" alt="花蓮縣一週氣溫變化圖" /><figcaption>花蓮縣氣溫變化：更換縣市後，程式會重新取得對應的預報資料，產生不同地區的一週溫度圖表。</figcaption></figure></div></section>` : csharpGallery;
+    const levelOverview = id === '05' ? `<section class="project-levels"><h2 class="project-levels-title">關卡設計</h2><div class="project-levels-grid"><article class="project-level"><div class="project-level-index">01 / FOREST</div><h3>森林場景</h3><p>作為遊戲的起始區域，玩家需要在森林地圖中探索並面對 Slime 敵人。清除場上的敵人後，系統會開啟通往下一個場景的路徑。</p></article><article class="project-level"><div class="project-level-index">02 / DESERT</div><h3>沙漠場景</h3><p>進入沙漠後，地圖配置與敵人類型有所變化，玩家需要觀察 Skeleton 的位置與攻擊方式，在戰鬥中維持生命值並繼續推進。</p></article><article class="project-level"><div class="project-level-index">03 / SNOW</div><h3>雪地場景</h3><p>雪地是最後的挑戰區域，玩家會遇到更具威脅的敵人與兩個 Boss，其中包含泡泡攻擊與追蹤型攻擊，必須完成最終戰鬥才能通關。</p></article></div></section>` : '';
+    const crawlerComparison = id === '10' ? `<section class="project-compare"><h2 class="project-levels-title">執行方式比較</h2><div class="project-compare-grid"><article class="project-compare-card"><div class="project-compare-index">01 / SEQUENTIAL</div><h3>一般爬蟲</h3><p>以 for 迴圈依序爬取十二個星座頁面，流程與輸出順序固定，實測執行時間約 6.23 秒。</p></article><article class="project-compare-card parallel"><div class="project-compare-index">02 / MULTITHREAD</div><h3>多線程爬蟲</h3><p>為每個星座建立 Thread，讓多個網路請求同時進行，並以 Lock 保護 SQLite 寫入，實測約 0.81 秒。</p></article></div></section>` : '';
+    document.querySelector('#project-page').insertAdjacentHTML('beforeend', `${hero}<article class="project-page-content"><div class="learning-kicker">${category}</div><h1>${title}</h1><p class="project-page-lead">${lead}</p>${liveLink}<div class="project-page-sections">${sections.map(([heading, body]) => `<section><h2>${heading}</h2><p>${body}</p></section>`).join('')}</div><div class="project-page-tags">${tags.map(tag => `<span>${tag}</span>`).join('')}</div></article>${magicMirrorGallery}${levelOverview}${crawlerComparison}`);
+  </script>
+</body>
+</html>
