@@ -123,8 +123,26 @@
         groupTitle.remove();
       }
     });
+    const cpeCard = document.createElement('a');
+    cpeCard.className = 'certificate-card cpe-card';
+    cpeCard.href = 'certificates/cpe-01.png';
+    cpeCard.target = '_blank';
+    cpeCard.rel = 'noreferrer';
+    cpeCard.innerHTML =
+      '<img src="certificates/cpe-01.png" alt="CPE 程式能力檢定證明" />' +
+      '<div><span>PROGRAMMING / 2024</span>' +
+      '<strong>CPE 程式能力檢定證明</strong></div>';
+
+    const certificateCards = document.querySelector('.certificate-cards');
+    if (certificateCards) {
+      certificateCards.insertBefore(
+        cpeCard,
+        certificateCards.children[1] || null
+      );
+    }
     const certificateMeta = [
       ['SCHOLARSHIP / 2025', '宗倬章先生教育基金會獎學金證書', '以學習投入與持續成長，獲得教育基金會獎學金肯定。'],
+      ['PROGRAMMING / 2024', 'CPE 程式能力檢定證明', 'CPE 程式能力檢定證明，呈現我在程式設計與問題解決方面的學習成果。'],
       ['ACADEMIC AWARD / 2026', '畢業生智育成績第三名證書', '大學畢業期間在資訊工程學系維持穩定的學業表現。'],
       ['TQC / 2025', '英文輸入實用級認證', '通過英文輸入實用級認證，建立英文鍵入與文件處理能力。'],
       ['TQC / 2025', '數字輸入進階級認證', '通過數字輸入進階級認證，提升資料輸入的速度與準確度。'],
